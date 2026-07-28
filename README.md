@@ -138,9 +138,9 @@
             background: #161616;
         }
         .gallery-item img {
-            width: 100% !important;
-            height: 100% !important;
-            object-fit: cover !important;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
             display: block;
             transition: 0.3s;
         }
@@ -337,16 +337,16 @@
             <div class="form-group">
                 <label>Saat Seçin (12:00 - 21:00 Arası)</label>
                 <div class="hours-grid">
-                    <button class="hour-btn" onclick="saatSec(this)">12:00</button>
-                    <button class="hour-btn" onclick="saatSec(this)">13:00</button>
-                    <button class="hour-btn" onclick="saatSec(this)">14:00</button>
-                    <button class="hour-btn" onclick="saatSec(this)">15:00</button>
-                    <button class="hour-btn" onclick="saatSec(this)">16:00</button>
-                    <button class="hour-btn" onclick="saatSec(this)">17:00</button>
-                    <button class="hour-btn" onclick="saatSec(this)">18:00</button>
-                    <button class="hour-btn" onclick="saatSec(this)">19:00</button>
-                    <button class="hour-btn" onclick="saatSec(this)">20:00</button>
-                    <button class="hour-btn" onclick="saatSec(this)">21:00</button>
+                    <button type="button" class="hour-btn" onclick="saatSec(this)">12:00</button>
+                    <button type="button" class="hour-btn" onclick="saatSec(this)">13:00</button>
+                    <button type="button" class="hour-btn" onclick="saatSec(this)">14:00</button>
+                    <button type="button" class="hour-btn" onclick="saatSec(this)">15:00</button>
+                    <button type="button" class="hour-btn" onclick="saatSec(this)">16:00</button>
+                    <button type="button" class="hour-btn" onclick="saatSec(this)">17:00</button>
+                    <button type="button" class="hour-btn" onclick="saatSec(this)">18:00</button>
+                    <button type="button" class="hour-btn" onclick="saatSec(this)">19:00</button>
+                    <button type="button" class="hour-btn" onclick="saatSec(this)">20:00</button>
+                    <button type="button" class="hour-btn" onclick="saatSec(this)">21:00</button>
                 </div>
             </div>
             <button type="button" class="btn" style="width: 100%; margin-top: 10px;" onclick="whatsappRandevuGonder()">WhatsApp ile Randevu İste</button>
@@ -396,7 +396,7 @@
                 return;
             }
 
-            const mesaj = `Merhaba Arda, randevu almak istiyorum.%0A%0A*Ad Soyad:* ${ad}%0A*Telefon:* ${tel}%0A*Hizmet:* ${hizmet}%0A*Tarih:* ${tarih}%0A*Saat:* ${secilenTag}`;
+            const mesaj = `Merhaba Arda, randevu almak istiyorum.%0A%0A*Ad Soyad:* ${ad}%0A*Telefon:* ${tel}%0A*Hizmet:* ${hizmet}%0A*Tarih:* ${tarih}%0A*Saat:* ${secilenSaat}`;
             const telefon = "905012963140";
             
             window.open(`https://wa.me/${telefon}?text=${mesaj}`, '_blank');
@@ -404,7 +404,11 @@
     </script>
 
 </body>
-</html><img width="921" height="2048" alt="arda3 jpg" src="https://github.com/user-attachments/assets/9761c8ff-f1b6-429b-8825-9d8d46c4b11e" />
-<img width="921" height="2048" alt="arda2 jpg" src="https://github.com/user-attachments/assets/6448fe5e-1274-4124-91a9-28cc904cceba" />
-<img width="921" height="2048" alt="arda1 jpg" src="https://github.com/user-attachments/assets/5515be96-ceb9-41d8-9a0c-c0580833dcaa" />
-<img width="921" height="2048" alt="arda4 jpg" src="https://github.com/user-attachments/assets/4437019d-e815-4c96-a39c-369997fe968e" />
+</html><img width="921" height="2048" alt="arda4 jpg" src="https://github.com/user-attachments/assets/ddd48444-d528-4ab1-a3f4-0bd81dba3ae2" />
+<img width="921" height="2048" alt="arda3 jpg" src="https://github.com/user-attachments/assets/a9b8ca66-3cda-4e1f-bf35-21f66eda50cd" />
+<img width="921" height="2048" alt="arda2 jpg" src="https://github.com/user-attachments/assets/1f5ac2fd-2b83-48a2-88c5-629b14f958e7" />
+<img width="921" height="2048" alt="arda1 jpg" src="https://github.com/user-attachments/assets/aef73c2e-ccc5-44d2-9aca-d41faa8453a5" />
+<img width="921" height="2048" alt="arda3 jpg" src="https://github.com/user-attachments/assets/f462fca5-2031-4e60-8c9c-00fb002736d9" />
+<img width="921" height="2048" alt="arda2 jpg" src="https://github.com/user-attachments/assets/c2e6eabf-ef23-43cd-8641-cfe935146bad" />
+<img width="921" height="2048" alt="arda1 jpg" src="https://github.com/user-attachments/assets/1c53ab42-f48f-42ae-8f57-e6c3b8437236" />
+<img width="921" height="2048" alt="arda4 jpg" src="https://github.com/user-attachments/assets/13d2c37a-8bec-4d3e-bef7-7b85516bd567" />
