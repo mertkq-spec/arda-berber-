@@ -1,7 +1,4 @@
-<img width="921" height="2048" alt="arda4 jpg" src="https://github.com/user-attachments/assets/d9ce22c1-259e-4424-acda-add9076e37fc" />
-<img width="921" height="2048" alt="arda3 jpg" src="https://github.com/user-attachments/assets/96ab8268-a067-47e9-bccf-1836731e55b7" />
-<img width="921" height="2048" alt="arda2 jpg" src="https://github.com/user-attachments/assets/ea2246e4-c39c-40f6-95de-8beffdcf2029" />
-<img width="921" height="2048" alt="arda1 jpg" src="https://github.com/user-attachments/assets/7ad0347f-7e1c-47fb-b484-281067dddecb" />
+
 <!DOCTYPE html>
 <html lang="tr">
 <head>
