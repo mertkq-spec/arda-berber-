@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="tr">
 <head>
@@ -131,6 +130,7 @@
             gap: 20px;
         }
         .gallery-item {
+            width: 100%;
             height: 280px;
             border-radius: 8px;
             overflow: hidden;
@@ -138,9 +138,10 @@
             background: #161616;
         }
         .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+            width: 100% !important;
+            height: 100% !important;
+            object-fit: cover !important;
+            display: block;
             transition: 0.3s;
         }
         .gallery-item img:hover {
@@ -395,7 +396,7 @@
                 return;
             }
 
-            const mesaj = `Merhaba Arda, randevu almak istiyorum.%0A%0A*Ad Soyad:* ${ad}%0A*Telefon:* ${tel}%0A*Hizmet:* ${hizmet}%0A*Tarih:* ${tarih}%0A*Saat:* ${secilenSaat}`;
+            const mesaj = `Merhaba Arda, randevu almak istiyorum.%0A%0A*Ad Soyad:* ${ad}%0A*Telefon:* ${tel}%0A*Hizmet:* ${hizmet}%0A*Tarih:* ${tarih}%0A*Saat:* ${secilenTag}`;
             const telefon = "905012963140";
             
             window.open(`https://wa.me/${telefon}?text=${mesaj}`, '_blank');
@@ -403,4 +404,7 @@
     </script>
 
 </body>
-</html>
+</html><img width="921" height="2048" alt="arda3 jpg" src="https://github.com/user-attachments/assets/9761c8ff-f1b6-429b-8825-9d8d46c4b11e" />
+<img width="921" height="2048" alt="arda2 jpg" src="https://github.com/user-attachments/assets/6448fe5e-1274-4124-91a9-28cc904cceba" />
+<img width="921" height="2048" alt="arda1 jpg" src="https://github.com/user-attachments/assets/5515be96-ceb9-41d8-9a0c-c0580833dcaa" />
+<img width="921" height="2048" alt="arda4 jpg" src="https://github.com/user-attachments/assets/4437019d-e815-4c96-a39c-369997fe968e" />
