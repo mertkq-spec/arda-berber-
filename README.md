@@ -1,7 +1,3 @@
-<img width="921" height="2048" alt="a50801f5-a779-47dc-aaf6-ce861bf1e916" src="https://github.com/user-attachments/assets/c4c3777c-3809-40ba-9bef-2e8d3188c141" />
-<img width="921" height="2048" alt="a2eaa8ed-632b-4d6e-b115-ceb2d5ed519d" src="https://github.com/user-attachments/assets/ee82a2ee-ea5b-4232-a3f5-0323cce912f3" />
-<img width="921" height="2048" alt="81d63c08-e2d8-40f9-af24-09c6dc71f5ba" src="https://github.com/user-attachments/assets/bb0cfa1a-642d-4933-b9f1-6013b15b6062" />
-<img width="921" height="2048" alt="6fb42082-56ab-4d8f-a86c-0ed713a0b06b" src="https://github.com/user-attachments/assets/0bc1261e-a65e-41ad-b467-eb3adbe49a8c" />
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -47,7 +43,7 @@
         }
 
         .hero {
-            background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.9)), url('arda1.jpg') center/cover no-repeat;
+            background: linear-gradient(rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.95)), #1e293b center/cover no-repeat;
             padding: 100px 20px;
             text-align: center;
         }
@@ -136,17 +132,13 @@
             border-radius: 12px;
             overflow: hidden;
             border: 1px solid #334155;
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.3s ease;
-        }
-
-        .gallery-item img:hover {
-            transform: scale(1.05);
+            background-color: #1e293b;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #38bdf8;
+            font-weight: bold;
+            font-size: 18px;
         }
 
         .booking-section {
@@ -254,10 +246,10 @@
         <div class="gallery-section">
             <h2 class="section-title">Çalışmalarımızdan Kareler</h2>
             <div class="gallery-grid">
-                <div class="gallery-item"><img src="arda1.jpg" alt="Arda Çalışma 1"></div>
-                <div class="gallery-item"><img src="arda2.jpg" alt="Arda Çalışma 2"></div>
-                <div class="gallery-item"><img src="arda3.jpg" alt="Arda Çalışma 3"></div>
-                <div class="gallery-item"><img src="arda4.jpg" alt="Arda Çalışma 4"></div>
+                <div class="gallery-item">Arda Stil 1</div>
+                <div class="gallery-item">Arda Stil 2</div>
+                <div class="gallery-item">Arda Stil 3</div>
+                <div class="gallery-item">Arda Stil 4</div>
             </div>
         </div>
 
