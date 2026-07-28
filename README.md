@@ -1,321 +1,405 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arda Barber - Profesyonel Erkek Kuaförü</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>Arda Yılmaz | Professional Barber</title>
     <style>
         * {
-            box-sizing: border-box;
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-
         body {
-            background-color: #0f172a;
-            font-family: 'Lato', sans-serif;
-            color: #f8fafc;
+            background-color: #0b0b0b;
+            color: #f0f0f0;
             line-height: 1.6;
         }
-
         header {
-            background-color: #1e293b;
+            background: #121212;
             padding: 20px 40px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 1px solid #334155;
+            border-bottom: 1px solid #222;
             position: sticky;
             top: 0;
-            z-index: 100;
+            z-index: 1000;
         }
-
         .logo {
-            font-family: 'Poppins', sans-serif;
-            font-size: 24px;
-            font-weight: 700;
-            color: #38bdf8;
+            font-size: 22px;
+            font-weight: bold;
+            color: #d4af37;
+            letter-spacing: 2px;
+        }
+        nav a {
+            color: #ccc;
+            text-decoration: none;
+            margin-left: 20px;
+            transition: 0.3s;
+            font-size: 14px;
+        }
+        nav a:hover {
+            color: #d4af37;
+        }
+        .hero {
+            height: 85vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.9)), url('arda1.jpg') no-repeat center center/cover;
+            padding: 0 20px;
+        }
+        .hero h1 {
+            font-size: 46px;
+            margin-bottom: 10px;
+            color: #fff;
             letter-spacing: 1px;
         }
-
-        .hero {
-            background: linear-gradient(rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.95)), #1e293b center/cover no-repeat;
-            padding: 100px 20px;
-            text-align: center;
-        }
-
-        .hero h1 {
-            font-family: 'Poppins', sans-serif;
-            font-size: 56px;
-            font-weight: 700;
-            color: #ffffff;
-            margin-bottom: 20px;
-        }
-
-        .hero p {
+        .hero .slogan {
             font-size: 20px;
-            color: #94a3b8;
-            max-width: 600px;
-            margin: 0 auto 40px auto;
+            color: #d4af37;
+            margin-bottom: 15px;
+            font-style: italic;
         }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
+        .hero p {
+            font-size: 16px;
+            color: #aaa;
+            margin-bottom: 30px;
+        }
+        .btn {
+            background: #d4af37;
+            color: #0b0b0b;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 4px;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            transition: 0.3s;
+            display: inline-block;
+        }
+        .btn:hover {
+            background: #f3c653;
+        }
+        section {
             padding: 60px 20px;
+            max-width: 1000px;
+            margin: 0 auto;
         }
-
-        h2.section-title {
-            font-family: 'Poppins', sans-serif;
-            font-size: 36px;
+        h2 {
             text-align: center;
+            font-size: 32px;
             margin-bottom: 40px;
-            color: #f8fafc;
+            color: #d4af37;
+            letter-spacing: 1px;
         }
-
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            margin-bottom: 60px;
-        }
-
-        .service-card {
-            background-color: #1e293b;
-            border: 1px solid #334155;
-            border-radius: 12px;
-            padding: 30px;
-            text-align: center;
-            transition: transform 0.3s ease;
-        }
-
-        .service-card:hover {
-            transform: translateY(-5px);
-            border-color: #38bdf8;
-        }
-
-        .service-card i {
-            font-size: 40px;
-            color: #38bdf8;
-            margin-bottom: 20px;
-        }
-
-        .service-card h3 {
-            font-family: 'Poppins', sans-serif;
-            font-size: 22px;
-            margin-bottom: 10px;
-        }
-
-        .service-card .price {
-            font-size: 20px;
-            font-weight: 700;
-            color: #34d399;
-            margin-top: 15px;
-        }
-
-        .gallery-section {
-            margin-bottom: 60px;
-        }
-
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 20px;
         }
-
-        .gallery-item {
-            height: 300px;
-            border-radius: 12px;
-            overflow: hidden;
-            border: 1px solid #334155;
-            background-color: #1e293b;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #38bdf8;
-            font-weight: bold;
+        .card {
+            background: #161616;
+            padding: 25px;
+            border-radius: 8px;
+            border: 1px solid #222;
+            text-align: center;
+            transition: 0.3s;
+        }
+        .card:hover {
+            border-color: #d4af37;
+        }
+        .card h3 {
+            margin-bottom: 15px;
+            color: #fff;
             font-size: 18px;
         }
-
-        .booking-section {
-            background-color: #1e293b;
-            border: 1px solid #334155;
-            border-radius: 16px;
-            padding: 40px;
-            max-width: 700px;
+        .price {
+            color: #d4af37;
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+        .gallery-item {
+            height: 280px;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #222;
+            background: #161616;
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.3s;
+        }
+        .gallery-item img:hover {
+            transform: scale(1.05);
+        }
+        .booking-box {
+            background: #161616;
+            padding: 30px;
+            border-radius: 8px;
+            border: 1px solid #222;
+            max-width: 600px;
             margin: 0 auto;
         }
-
         .form-group {
             margin-bottom: 20px;
         }
-
         .form-group label {
             display: block;
             margin-bottom: 8px;
-            font-weight: 600;
-            color: #cbd5e1;
+            color: #ccc;
+            font-size: 14px;
         }
-
         .form-group input, .form-group select {
             width: 100%;
-            padding: 14px;
-            background-color: #0f172a;
-            border: 1px solid #475569;
-            border-radius: 8px;
+            padding: 12px;
+            background: #0b0b0b;
+            border: 1px solid #333;
             color: #fff;
-            font-size: 16px;
-        }
-
-        .form-group input:focus, .form-group select:focus {
+            border-radius: 4px;
             outline: none;
-            border-color: #38bdf8;
         }
-
-        .whatsapp-btn {
-            background-color: #25d366;
-            color: white;
-            border: none;
-            width: 100%;
-            padding: 16px;
-            border-radius: 8px;
-            font-size: 18px;
-            font-weight: 700;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .form-group input:focus, .form-group select:focus {
+            border-color: #d4af37;
+        }
+        .hours-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
             gap: 10px;
-            transition: background-color 0.3s ease;
+            margin-top: 10px;
+        }
+        .hour-btn {
+            background: #0b0b0b;
+            border: 1px solid #333;
+            color: #fff;
+            padding: 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            text-align: center;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+        .hour-btn:hover {
+            border-color: #d4af37;
+        }
+        .hour-btn.selected {
+            background: #d4af37;
+            color: #0b0b0b;
+            font-weight: bold;
+        }
+        .about-box {
+            background: #161616;
+            padding: 30px;
+            border-radius: 8px;
+            border: 1px solid #222;
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .about-box p {
+            color: #bbb;
+            margin-bottom: 15px;
+        }
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
             margin-top: 20px;
+        }
+        .social-links a {
+            color: #d4af37;
             text-decoration: none;
+            border: 1px solid #d4af37;
+            padding: 8px 16px;
+            border-radius: 4px;
+            font-size: 14px;
+            transition: 0.3s;
         }
-
-        .whatsapp-btn:hover {
-            background-color: #22c55e;
+        .social-links a:hover {
+            background: #d4af37;
+            color: #0b0b0b;
         }
-
         footer {
             text-align: center;
-            padding: 40px;
-            color: #64748b;
-            border-top: 1px solid #334155;
-            margin-top: 60px;
+            padding: 30px;
+            background: #121212;
+            border-top: 1px solid #222;
+            color: #666;
+            font-size: 13px;
+        }
+        footer span {
+            color: #d4af37;
         }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="logo"><i class="fa-solid fa-scissors"></i> ARDA BERBER</div>
-        <div><i class="fa-solid fa-phone"></i> 0501 296 31 40</div>
+        <div class="logo">ARDA YILMAZ</div>
+        <nav>
+            <a href="#hizmetler">Hizmetler</a>
+            <a href="#galeri">Galeri</a>
+            <a href="#randevu">Randevu Al</a>
+            <a href="#hakkinda">Hakkında</a>
+            <a href="#iletisim">İletişim</a>
+        </nav>
     </header>
 
-    <section class="hero">
-        <h1>Tarzını Yenile, Farkını Yansıt</h1>
-        <p>Profesyonel kesim, sakal tasarımı ve modern saç bakım hizmetleri için hemen randevunu oluştur.</p>
-    </section>
-
-    <div class="container">
-        <h2 class="section-title">Hizmetlerimiz</h2>
-        <div class="services-grid">
-            <div class="service-card">
-                <i class="fa-solid fa-user-tie"></i>
-                <h3>Saç Kesimi</h3>
-                <p>Yüz tipine uygun modern ve klasik saç kesim teknikleri.</p>
-                <div class="price">300 TL</div>
-            </div>
-            <div class="service-card">
-                <i class="fa-solid fa-feather"></i>
-                <h3>Sakal Tıraşı & Şekillendirme</h3>
-                <p>Sıcak havlu kompresi ve profesyonel sakal bakımı.</p>
-                <div class="price">200 TL</div>
-            </div>
-            <div class="service-card">
-                <i class="fa-solid fa-spa"></i>
-                <h3>Komple Bakım</h3>
-                <p>Saç, sakal, yıkama ve cilt bakım paketi.</p>
-                <div class="price">600 TL</div>
-            </div>
-        </div>
-
-        <div class="gallery-section">
-            <h2 class="section-title">Çalışmalarımızdan Kareler</h2>
-            <div class="gallery-grid">
-                <div class="gallery-item">Arda Stil 1</div>
-                <div class="gallery-item">Arda Stil 2</div>
-                <div class="gallery-item">Arda Stil 3</div>
-                <div class="gallery-item">Arda Stil 4</div>
-            </div>
-        </div>
-
-        <div class="booking-section">
-            <h2 class="section-title" style="margin-bottom: 20px;">Hemen Randevu Al</h2>
-            <div class="form-group">
-                <label for="name">Ad Soyad</label>
-                <input type="text" id="name" placeholder="Adınızı girin">
-            </div>
-            <div class="form-group">
-                <label for="phone">Telefon Numarası</label>
-                <input type="tel" id="phone" placeholder="05XXXXXXXXX">
-            </div>
-            <div class="form-group">
-                <label for="service">Hizmet Seçin</label>
-                <select id="service">
-                    <option value="Saç Kesimi (300 TL)">Saç Kesimi - 300 TL</option>
-                    <option value="Sakal Tıraşı (200 TL)">Sakal Tıraşı - 200 TL</option>
-                    <option value="Komple Bakım (600 TL)">Komple Bakım - 600 TL</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="date">Tarih</label>
-                <input type="date" id="date">
-            </div>
-            <div class="form-group">
-                <label for="time">Saat</label>
-                <select id="time">
-                    <option value="10:00">10:00</option>
-                    <option value="11:30">11:30</option>
-                    <option value="13:00">13:00</option>
-                    <option value="14:30">14:30</option>
-                    <option value="16:00">16:00</option>
-                    <option value="17:30">17:30</option>
-                    <option value="19:00">19:00</option>
-                </select>
-            </div>
-            
-            <a href="#" id="waButton" class="whatsapp-btn" onclick="sendWhatsApp()">
-                <i class="fa-brands fa-whatsapp" style="font-size: 24px;"></i> WhatsApp ile Randevu İste
-            </a>
-        </div>
+    <div class="hero">
+        <h1>ARDA YILMAZ</h1>
+        <div class="slogan">"Tarzını Keskinleştir, Kendini Yenile!"</div>
+        <p>Bursa / Osmangazi • Profesyonel Saç Kesimi & Bakım</p>
+        <a href="#randevu" class="btn">Hemen Randevu Al</a>
     </div>
 
+    <section id="hizmetler">
+        <h2>Hizmetler & Fiyatlar</h2>
+        <div class="services-grid">
+            <div class="card">
+                <h3>Saç Kesimi</h3>
+                <p>Modern ve yüz tipine uygun fade/crop kesim stilleri.</p>
+                <div class="price">350 TL</div>
+            </div>
+            <div class="card">
+                <h3>Sakal Şekillendirme</h3>
+                <p>Özenli hat çizgileri ve profesyonel bakım.</p>
+                <div class="price">200 TL</div>
+            </div>
+            <div class="card">
+                <h3>Saç & Sakal Bakımı</h3>
+                <p>Komple bakım paketi ile kusursuz görünüm.</p>
+                <div class="price">500 TL</div>
+            </div>
+            <div class="card">
+                <h3>Fön & Stil Düzenleme</h3>
+                <p>Günlük tarza uygun form ve şekillendirme.</p>
+                <div class="price">150 TL</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="galeri">
+        <h2>Çalışmalarımız</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="arda1.jpg" alt="Arda Yılmaz Saç Tasarım 1">
+            </div>
+            <div class="gallery-item">
+                <img src="arda2.jpg" alt="Arda Yılmaz Saç Tasarım 2">
+            </div>
+            <div class="gallery-item">
+                <img src="arda3.jpg" alt="Arda Yılmaz Saç Tasarım 3">
+            </div>
+            <div class="gallery-item">
+                <img src="arda4.jpg" alt="Arda Yılmaz Saç Tasarım 4">
+            </div>
+        </div>
+    </section>
+
+    <section id="randevu">
+        <h2>Randevu Oluştur</h2>
+        <div class="booking-box">
+            <div class="form-group">
+                <label>Adınız Soyadınız</label>
+                <input type="text" id="musteriAdi" placeholder="Adınızı girin">
+            </div>
+            <div class="form-group">
+                <label>Telefon Numaranız</label>
+                <input type="tel" id="musteriTel" placeholder="05XX XXX XX XX">
+            </div>
+            <div class="form-group">
+                <label>Hizmet Seçin</label>
+                <select id="hizmetSecim">
+                    <option value="Saç Kesimi (350 TL)">Saç Kesimi - 350 TL</option>
+                    <option value="Sakal Şekillendirme (200 TL)">Sakal Şekillendirme - 200 TL</option>
+                    <option value="Saç & Sakal Bakımı (500 TL)">Saç & Sakal Bakımı - 500 TL</option>
+                    <option value="Fön & Stil Düzenleme (150 TL)">Fön & Stil Düzenleme - 150 TL</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Gün Seçin</label>
+                <input type="date" id="randevuTarihi">
+            </div>
+            <div class="form-group">
+                <label>Saat Seçin (12:00 - 21:00 Arası)</label>
+                <div class="hours-grid">
+                    <button class="hour-btn" onclick="saatSec(this)">12:00</button>
+                    <button class="hour-btn" onclick="saatSec(this)">13:00</button>
+                    <button class="hour-btn" onclick="saatSec(this)">14:00</button>
+                    <button class="hour-btn" onclick="saatSec(this)">15:00</button>
+                    <button class="hour-btn" onclick="saatSec(this)">16:00</button>
+                    <button class="hour-btn" onclick="saatSec(this)">17:00</button>
+                    <button class="hour-btn" onclick="saatSec(this)">18:00</button>
+                    <button class="hour-btn" onclick="saatSec(this)">19:00</button>
+                    <button class="hour-btn" onclick="saatSec(this)">20:00</button>
+                    <button class="hour-btn" onclick="saatSec(this)">21:00</button>
+                </div>
+            </div>
+            <button type="button" class="btn" style="width: 100%; margin-top: 10px;" onclick="whatsappRandevuGonder()">WhatsApp ile Randevu İste</button>
+        </div>
+    </section>
+
+    <section id="hakkinda">
+        <h2>Kurucu & Hakkında</h2>
+        <div class="about-box">
+            <p><strong>Arda Yılmaz</strong> tarafından Bursa / Osmangazi bölgesinde freelance olarak kurulan ve gençlerin tarzına yön veren profesyonel bakım noktası.</p>
+            <p>Bu modern web sitesinin geliştirilmesi ve dijital altyapısı <strong>Mert</strong> tarafından tasarlanmıştır.</p>
+        </div>
+    </section>
+
+    <section id="iletisim" style="text-align: center;">
+        <h2>İletişim & Sosyal Medya</h2>
+        <p style="margin-bottom: 10px; color: #aaa;">📍 Bursa, Osmangazi (Freelance Hizmet)</p>
+        <p style="margin-bottom: 20px; color: #aaa;">📞 501 296 3140</p>
+        <div class="social-links">
+            <a href="https://instagram.com/berber.oluyorum.arda" target="_blank">İş Instagram</a>
+            <a href="https://instagram.com/arda.y16" target="_blank">Kişisel Instagram</a>
+            <a href="https://tiktok.com" target="_blank">TikTok</a>
+        </div>
+    </section>
+
     <footer>
-        <p>&copy; 2026 Arda Barber. Tüm Hakları Saklıdır.</p>
+        <p>&copy; 2026 Arda Yılmaz. Tüm hakları saklıdır. | Geliştirici: <span>Mert</span></p>
     </footer>
 
     <script>
-        function sendWhatsApp() {
-            const name = document.getElementById('name').value.trim();
-            const phone = document.getElementById('phone').value.trim();
-            const service = document.getElementById('service').value;
-            const date = document.getElementById('date').value;
-            const time = document.getElementById('time').value;
+        let secilenSaat = "";
 
-            if (!name || !phone || !date) {
-                alert('Lütfen adınızı, telefonunuzu ve tarih alanını doldurun!');
+        function saatSec(element) {
+            document.querySelectorAll('.hour-btn').forEach(btn => btn.classList.remove('selected'));
+            element.classList.add('selected');
+            secilenSaat = element.innerText;
+        }
+
+        function whatsappRandevuGonder() {
+            const ad = document.getElementById('musteriAdi').value;
+            const tel = document.getElementById('musteriTel').value;
+            const hizmet = document.getElementById('hizmetSecim').value;
+            const tarih = document.getElementById('randevuTarihi').value;
+
+            if (!ad || !tel || !tarih || !secilenSaat) {
+                alert("Lütfen adınızı, telefonunuzu, tarihi ve saati eksiksiz seçin!");
                 return;
             }
 
-            const message = `Merhaba Arda, randevu almak istiyorum.%0A%0A*Ad Soyad:* ${name}%0A*Telefon:* ${phone}%0A*Hizmet:* ${service}%0A*Tarih:* ${date}%0A*Saat:* ${time}`;
+            const mesaj = `Merhaba Arda, randevu almak istiyorum.%0A%0A*Ad Soyad:* ${ad}%0A*Telefon:* ${tel}%0A*Hizmet:* ${hizmet}%0A*Tarih:* ${tarih}%0A*Saat:* ${secilenSaat}`;
+            const telefon = "905012963140";
             
-            const url = `https://wa.me/905012963140?text=${message}`;
-            window.open(url, '_blank');
+            window.open(`https://wa.me/${telefon}?text=${mesaj}`, '_blank');
         }
     </script>
+
 </body>
 </html>
