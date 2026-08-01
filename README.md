@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arda Yılmaz | Professional Barber</title>
+    <title>✂️ Arda Yılmaz | Professional Barber</title>
     <style>
         :root {
             --bg-color: #0b0b0b;
@@ -28,11 +28,11 @@
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; transition: background 0.3s, color 0.3s; }
-        body { background-color: var(--bg-color); color: var(--text-color); line-height: 1.6; }
+        body { background-color: var(--bg-color); color: var(--text-color); line-height: 1.6; width: 100%; overflow-x: hidden; }
         
         header { 
             background: var(--header-bg); 
-            padding: 15px 20px; 
+            padding: 15px 40px; 
             display: flex; 
             justify-content: space-between; 
             align-items: center; 
@@ -40,15 +40,16 @@
             position: sticky; 
             top: 0; 
             z-index: 1000; 
+            width: 100%;
         }
-        .logo { font-size: 20px; font-weight: bold; color: var(--accent); letter-spacing: 2px; }
+        .logo { font-size: 22px; font-weight: bold; color: var(--accent); letter-spacing: 2px; }
         
-        nav { display: flex; gap: 15px; align-items: center; }
-        nav a { color: var(--text-muted); text-decoration: none; transition: 0.3s; font-size: 14px; }
+        nav { display: flex; gap: 20px; align-items: center; }
+        nav a { color: var(--text-muted); text-decoration: none; transition: 0.3s; font-size: 15px; }
         nav a:hover { color: var(--accent); }
         
-        .header-controls { display: flex; gap: 10px; align-items: center; }
-        .theme-btn, .lang-btn { background: none; border: 1px solid var(--border-color); color: var(--text-color); padding: 5px 10px; border-radius: 4px; cursor: pointer; font-size: 12px; }
+        .header-controls { display: flex; gap: 12px; align-items: center; }
+        .theme-btn, .lang-btn { background: none; border: 1px solid var(--border-color); color: var(--text-color); padding: 6px 12px; border-radius: 4px; cursor: pointer; font-size: 13px; }
         .theme-btn:hover, .lang-btn:hover { border-color: var(--accent); color: var(--accent); }
 
         .menu-toggle { display: none; flex-direction: column; cursor: pointer; gap: 5px; }
@@ -62,6 +63,7 @@
 
         .hero { 
             height: 85vh; 
+            width: 100%;
             display: flex; 
             flex-direction: column; 
             justify-content: center; 
@@ -70,70 +72,94 @@
             background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.9)), url('arda1.jpg') no-repeat center center/cover; 
             padding: 0 20px; 
         }
-        .hero h1 { font-size: 38px; margin-bottom: 10px; color: #fff; letter-spacing: 1px; }
-        .hero .slogan { font-size: 18px; color: var(--accent); margin-bottom: 15px; font-style: italic; }
-        .hero p { font-size: 14px; color: #aaa; margin-bottom: 20px; }
+        .hero h1 { font-size: 46px; margin-bottom: 10px; color: #fff; letter-spacing: 1px; }
+        .hero .slogan { font-size: 20px; color: var(--accent); margin-bottom: 15px; font-style: italic; }
+        .hero p { font-size: 16px; color: #aaa; margin-bottom: 25px; }
         
         .btn { background: var(--accent); color: #0b0b0b; padding: 12px 30px; border: none; border-radius: 4px; font-weight: bold; cursor: pointer; text-decoration: none; transition: 0.3s; display: inline-block; }
         .btn:hover { background: var(--accent-hover); }
         
-        section { padding: 50px 20px; max-width: 1000px; margin: 0 auto; opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
+        /* Ekranı tam kaplaması için genişlik ayarları güncellendi */
+        section { padding: 70px 40px; max-width: 1200px; margin: 0 auto; opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
         section.visible { opacity: 1; transform: translateY(0); }
-        h2 { text-align: center; font-size: 28px; margin-bottom: 30px; color: var(--accent); letter-spacing: 1px; }
+        h2 { text-align: center; font-size: 32px; margin-bottom: 40px; color: var(--accent); letter-spacing: 1px; }
         
-        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
-        .card { background: var(--card-bg); padding: 25px; border-radius: 8px; border: 1px solid var(--border-color); text-align: center; transition: 0.3s; }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; }
+        .card { background: var(--card-bg); padding: 30px; border-radius: 8px; border: 1px solid var(--border-color); text-align: center; transition: 0.3s; }
         .card:hover { border-color: var(--accent); }
-        .card h3 { margin-bottom: 15px; color: var(--text-color); font-size: 18px; }
+        .card h3 { margin-bottom: 15px; color: var(--text-color); font-size: 20px; }
         .card p { color: var(--text-muted); font-size: 14px; }
-        .price { color: var(--accent); font-size: 20px; font-weight: bold; margin-top: 15px; }
+        .price { color: var(--accent); font-size: 22px; font-weight: bold; margin-top: 15px; }
         
-        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
-        .gallery-item { width: 100%; height: 250px; border-radius: 8px; overflow: hidden; border: 1px solid var(--border-color); background: var(--card-bg); position: relative; }
-        .gallery-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: 0.3s; }
-        .gallery-item:hover img { transform: scale(1.05); }
-        .insta-tag { position: absolute; bottom: 10px; right: 10px; background: rgba(0,0,0,0.7); color: #fff; padding: 4px 8px; border-radius: 4px; font-size: 11px; display: flex; align-items: center; gap: 4px; }
+        /* Kesin Çözümlü Galeri Izgarası (Fotoğrafların devasa çıkmasını engeller) */
+        .gallery-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+            gap: 25px; 
+            width: 100%;
+        }
+        .gallery-item { 
+            width: 100%; 
+            height: 300px; 
+            border-radius: 8px; 
+            overflow: hidden; 
+            border: 1px solid var(--border-color); 
+            background: var(--card-bg); 
+            position: relative; 
+        }
+        .gallery-item img { 
+            width: 100%; 
+            height: 100%; 
+            object-fit: cover; 
+            object-position: center;
+            display: block; 
+            transition: 0.4s; 
+        }
+        .gallery-item:hover img { transform: scale(1.08); }
+        .insta-tag { position: absolute; bottom: 12px; right: 12px; background: rgba(0,0,0,0.75); color: #fff; padding: 5px 10px; border-radius: 4px; font-size: 12px; display: flex; align-items: center; gap: 4px; }
 
         /* Quiz Kutusu */
-        .quiz-box { background: var(--card-bg); padding: 25px; border-radius: 8px; border: 1px solid var(--border-color); max-width: 600px; margin: 0 auto; text-align: center; }
-        .quiz-options { display: flex; gap: 10px; justify-content: center; margin-top: 15px; flex-wrap: wrap; }
-        .quiz-btn { background: var(--bg-color); border: 1px solid var(--border-color); color: var(--text-color); padding: 10px 15px; border-radius: 4px; cursor: pointer; font-size: 13px; }
+        .quiz-box { background: var(--card-bg); padding: 30px; border-radius: 8px; border: 1px solid var(--border-color); max-width: 650px; margin: 0 auto; text-align: center; }
+        .quiz-options { display: flex; gap: 12px; justify-content: center; margin-top: 20px; flex-wrap: wrap; }
+        .quiz-btn { background: var(--bg-color); border: 1px solid var(--border-color); color: var(--text-color); padding: 12px 20px; border-radius: 4px; cursor: pointer; font-size: 14px; }
         .quiz-btn:hover { border-color: var(--accent); color: var(--accent); }
-        #quizSonuc { margin-top: 15px; font-weight: bold; color: var(--accent); }
+        #quizSonuc { margin-top: 20px; font-weight: bold; color: var(--accent); font-size: 16px; }
 
-        .booking-box { background: var(--card-bg); padding: 25px; border-radius: 8px; border: 1px solid var(--border-color); max-width: 600px; margin: 0 auto; }
-        .form-group { margin-bottom: 15px; }
-        .form-group label { display: block; margin-bottom: 6px; color: var(--text-muted); font-size: 14px; }
-        .form-group input, .form-group select { width: 100%; padding: 12px; background: var(--bg-color); border: 1px solid var(--border-color); color: var(--text-color); border-radius: 4px; outline: none; }
+        .booking-box { background: var(--card-bg); padding: 35px; border-radius: 8px; border: 1px solid var(--border-color); max-width: 650px; margin: 0 auto; }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; margin-bottom: 8px; color: var(--text-muted); font-size: 14px; }
+        .form-group input, .form-group select { width: 100%; padding: 14px; background: var(--bg-color); border: 1px solid var(--border-color); color: var(--text-color); border-radius: 4px; outline: none; font-size: 15px; }
         .form-group input:focus, .form-group select:focus { border-color: var(--accent); }
         
-        .hours-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; margin-top: 10px; }
-        .hour-btn { background: var(--bg-color); border: 1px solid var(--border-color); color: var(--text-color); padding: 8px 5px; border-radius: 4px; cursor: pointer; text-align: center; font-size: 13px; }
+        .hours-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin-top: 10px; }
+        .hour-btn { background: var(--bg-color); border: 1px solid var(--border-color); color: var(--text-color); padding: 10px; border-radius: 4px; cursor: pointer; text-align: center; font-size: 14px; }
         .hour-btn:hover { border-color: var(--accent); }
         .hour-btn.selected { background: var(--accent); color: #0b0b0b; font-weight: bold; }
         
-        #geriSayim { margin-top: 15px; text-align: center; font-size: 14px; color: var(--accent); font-weight: bold; }
+        #geriSayim { margin-top: 20px; text-align: center; font-size: 15px; color: var(--accent); font-weight: bold; }
 
-        .about-box { background: var(--card-bg); padding: 25px; border-radius: 8px; border: 1px solid var(--border-color); text-align: center; max-width: 700px; margin: 0 auto; }
-        .about-box p { color: var(--text-muted); margin-bottom: 15px; font-size: 15px; }
+        .about-box { background: var(--card-bg); padding: 35px; border-radius: 8px; border: 1px solid var(--border-color); text-align: center; max-width: 750px; margin: 0 auto; }
+        .about-box p { color: var(--text-muted); margin-bottom: 15px; font-size: 16px; }
         
-        .social-links { display: flex; justify-content: center; gap: 10px; margin-top: 20px; flex-wrap: wrap; }
-        .social-links a { color: var(--accent); text-decoration: none; border: 1px solid var(--accent); padding: 8px 14px; border-radius: 4px; font-size: 13px; transition: 0.3s; }
+        .social-links { display: flex; justify-content: center; gap: 15px; margin-top: 25px; flex-wrap: wrap; }
+        .social-links a { color: var(--accent); text-decoration: none; border: 1px solid var(--accent); padding: 10px 18px; border-radius: 4px; font-size: 14px; transition: 0.3s; }
         .social-links a:hover { background: var(--accent); color: #0b0b0b; }
         
         /* Sabit WhatsApp Butonu */
-        .float-whatsapp { position: fixed; bottom: 20px; right: 20px; background: #25d366; color: #fff; width: 50px; height: 50px; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 24px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 999; text-decoration: none; transition: 0.3s; }
+        .float-whatsapp { position: fixed; bottom: 25px; right: 25px; background: #25d366; color: #fff; width: 55px; height: 55px; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 28px; box-shadow: 0 4px 15px rgba(0,0,0,0.4); z-index: 999; text-decoration: none; transition: 0.3s; }
         .float-whatsapp:hover { transform: scale(1.1); }
 
-        footer { text-align: center; padding: 20px; background: var(--header-bg); border-top: 1px solid var(--border-color); color: var(--text-muted); font-size: 13px; }
+        footer { text-align: center; padding: 25px; background: var(--header-bg); border-top: 1px solid var(--border-color); color: var(--text-muted); font-size: 14px; width: 100%; }
         footer span { color: var(--accent); }
 
         @media (max-width: 768px) {
+            header { padding: 15px 20px; }
             .menu-toggle { display: flex; }
-            nav { display: none; position: absolute; top: 60px; left: 0; width: 100%; background: var(--header-bg); flex-direction: column; align-items: center; padding: 20px 0; border-bottom: 1px solid var(--border-color); }
+            nav { display: none; position: absolute; top: 65px; left: 0; width: 100%; background: var(--header-bg); flex-direction: column; align-items: center; padding: 25px 0; border-bottom: 1px solid var(--border-color); }
             nav.active { display: flex; }
-            nav a { margin: 10px 0; font-size: 16px; }
-            .hero h1 { font-size: 30px; }
+            nav a { margin: 12px 0; font-size: 17px; }
+            .hero h1 { font-size: 32px; }
+            section { padding: 50px 20px; }
             .hours-grid { grid-template-columns: repeat(3, 1fr); }
         }
     </style>
@@ -203,7 +229,11 @@
     <div class="gallery-grid">
         <div class="gallery-item">
             <img src="arda1.jpg" alt="Arda Yılmaz Saç Tasarım 1">
-            <div class="insta-tag">📸 @arda.y16</div>
+            <div class="insta-tag">📸 @arda.y16</div><img width="921" height="2048" alt="arda4 jpg" src="https://github.com/user-attachments/assets/43014b63-8514-4d69-9c92-b8e72ef61461" />
+<img width="921" height="2048" alt="arda3 jpg" src="https://github.com/user-attachments/assets/b9e9b870-991b-4fb5-b9e9-5bab5300cfcb" />
+<img width="921" height="2048" alt="arda2 jpg" src="https://github.com/user-attachments/assets/4c0113a5-dcfa-47b3-b27d-0b64dbd65df9" />
+<img width="921" height="2048" alt="arda1 jpg" src="https://github.com/user-attachments/assets/9498d966-367b-4a4e-ae53-1ec1f0bf9110" />
+
         </div>
         <div class="gallery-item">
             <img src="arda2.jpg" alt="Arda Yılmaz Saç Tasarım 2">
@@ -273,7 +303,7 @@
             </div>
         </div>
         <div id="geriSayim"></div>
-        <button type="button" class="btn" style="width: 100%; margin-top: 10px;" onclick="whatsappRandevuGonder()">WhatsApp ile Randevu İste</button>
+        <button type="button" class="btn" style="width: 100%; margin-top: 15px;" onclick="whatsappRandevuGonder()">WhatsApp ile Randevu İste</button>
     </div>
 </section>
 
@@ -307,12 +337,10 @@
     let secilenSaat = "";
     let aktifDil = "tr";
 
-    // Hamburger Menü
     function menuAcKapat() {
         document.getElementById('navMenu').classList.toggle('active');
     }
 
-    // Tema Değiştirici (Dark/Light)
     function temaDegistir() {
         const html = document.documentElement;
         const btnText = document.getElementById('temaText');
@@ -325,14 +353,12 @@
         }
     }
 
-    // Otomatik Açık/Kapalı Durumu Kontrolü
     function durumKontrol() {
         const simdi = new Date();
         const saat = simdi.getHours();
         const dot = document.getElementById('calismaDurumDot');
         const text = document.getElementById('calismaDurumText');
 
-        // 12:00 ile 21:00 arası açık kabul edelim
         if (saat >= 12 && saat < 21) {
             dot.className = "status-dot open";
             text.innerText = aktifDil === 'tr' ? "Şu an Açık 🟢 - Randevu Alabilirsiniz" : "Currently Open 🟢 - Book Now";
@@ -343,7 +369,6 @@
     }
     durumKontrol();
 
-    // Dil Değiştirici (TR / EN)
     function dilDegistir() {
         aktifDil = aktifDil === 'tr' ? 'en' : 'tr';
         document.getElementById('langText').innerText = aktifDil === 'tr' ? 'EN' : 'TR';
@@ -362,7 +387,6 @@
         }
     }
 
-    // Yüz Tipine Göre Saç Quiz'i
     function stilOner(yuzTipi) {
         const sonucDiv = document.getElementById('quizSonuc');
         if(yuzTipi === 'oval') {
@@ -374,7 +398,6 @@
         }
     }
 
-    // Saat Seçimi
     function saatSec(element) {
         document.querySelectorAll('.hour-btn').forEach(btn => btn.classList.remove('selected'));
         element.classList.add('selected');
@@ -382,7 +405,6 @@
         geriSayimBaslat();
     }
 
-    // Randevu Geri Sayım Sayacı
     function geriSayimBaslat() {
         const tarihInput = document.getElementById('randevuTarihi').value;
         if(!tarihInput || !secilenSaat) return;
@@ -406,7 +428,6 @@
         }, 1000);
     }
 
-    // Scroll Animasyonu (Fade-in)
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -419,7 +440,6 @@
         observer.observe(section);
     });
 
-    // WhatsApp Randevu Gönderim
     function whatsappRandevuGonder() {
         const ad = document.getElementById('musteriAdi').value;
         const tel = document.getElementById('musteriTel').value;
@@ -438,7 +458,3 @@
     }
 </script>
 </body>
-</html><img width="921" height="2048" alt="arda2 jpg" src="https://github.com/user-attachments/assets/0be7144c-6c05-4dd8-a31c-c94f8a504b04" />
-<img width="921" height="2048" alt="arda1 jpg" src="https://github.com/user-attachments/assets/ebeeecac-de1d-4b99-85ab-eb30b11de854" />
-<img width="921" height="2048" alt="arda4 jpg" src="https://github.com/user-attachments/assets/93f4c023-060e-4eed-bc3d-53f5fefe2f2f" />
-<img width="921" height="2048" alt="arda3 jpg" src="https://github.com/user-attachments/assets/9f3ee9f2-ba8d-4ed0-8d1e-923f3f9661fd" />
