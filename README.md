@@ -230,22 +230,26 @@
         <div class="gallery-item">
             <img src="arda1.jpg" alt="Arda Yılmaz Saç Tasarım 1">
             <div class="insta-tag">📸 @arda.y16</div><img width="921" height="2048" alt="arda4 jpg" src="https://github.com/user-attachments/assets/43014b63-8514-4d69-9c92-b8e72ef61461" />
-<img width="921" height="2048" alt="arda3 jpg" src="https://github.com/user-attachments/assets/b9e9b870-991b-4fb5-b9e9-5bab5300cfcb" />
-<img width="921" height="2048" alt="arda2 jpg" src="https://github.com/user-attachments/assets/4c0113a5-dcfa-47b3-b27d-0b64dbd65df9" />
-<img width="921" height="2048" alt="arda1 jpg" src="https://github.com/user-attachments/assets/9498d966-367b-4a4e-ae53-1ec1f0bf9110" />
+
+[index.html.html](https://github.com/user-attachments/files/30616151/index.html.html)
+
+
 
         </div>
         <div class="gallery-item">
             <img src="arda2.jpg" alt="Arda Yılmaz Saç Tasarım 2">
-            <div class="insta-tag">📸 @arda.y16</div>
+            <div class="insta-tag">📸 @arda.y16</div><img width="921" height="2048" alt="arda1 jpg" src="https://github.com/user-attachments/assets/9498d966-367b-4a4e-ae53-1ec1f0bf9110" />
         </div>
         <div class="gallery-item">
             <img src="arda3.jpg" alt="Arda Yılmaz Saç Tasarım 3">
-            <div class="insta-tag">📸 @arda.y16</div>
+            <div class="insta-tag">📸 @arda.y16</div><img<img width="921" height="2048" alt="arda1 jpg" src="https://github.com/user-attachments/assets/335ae4cc-293d-47bd-b2b9-79f8bf1085ac" /><img width="921" height="2048" alt="arda4 jpg" src="https://github.com/user-attachments/assets/f90b4c93-a34c-4b75-8bf5-cc9c32dd7814" />
+<img width="921" height="2048" alt="arda3 jpg" src="https://github.com/user-attachments/assets/0bbd85a4-a1ce-4cee-8a0c-c5238936387b" />
+<img width="921" height="2048" alt="arda2 jpg" src="https://github.com/user-attachments/assets/c1953838-c25b-4c49-a94b-fd80ad12b8a0" />
+ width="921" height="2048" alt="arda2 jpg" src="https://github.com/user-attachments/assets/4c0113a5-dcfa-47b3-b27d-0b64dbd65df9" />
         </div>
         <div class="gallery-item">
             <img src="arda4.jpg" alt="Arda Yılmaz Saç Tasarım 4">
-            <div class="insta-tag">📸 @arda.y16</div>
+            <div class="insta-tag">📸 @arda.y16</div><img width="921" height="2048" alt="arda3 jpg" src="https://github.com/user-attachments/assets/b9e9b870-991b-4fb5-b9e9-5bab5300cfcb" />
         </div>
     </div>
 </section>
