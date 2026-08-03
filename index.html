@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="favicon.png">
     <title>✂️ Arda Yılmaz | Professional Barber</title>
     <style>
         :root {
@@ -89,7 +90,6 @@
         .card p { color: var(--text-muted); font-size: 14px; }
         .price { color: var(--accent); font-size: 22px; font-weight: bold; margin-top: 15px; }
         
-        /* Fotoğraflar kaldırıldığı için şık geçici galeri kutuları */
         .gallery-grid { 
             display: grid; 
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
@@ -390,10 +390,6 @@
         const tel = document.getElementById('musteriTel').value;
         const hizmet = document.getElementById('hizmetSecim').value;
         const tarih = document.getElementById('randevuTarihi').value;
-
-        if (!ad || !tel || !tarih || !secilenSection && !secilenSaat) { // check updated
-            // standard check
-        }
 
         if (!ad || !tel || !tarih || !secilenSaat) {
             alert("Lütfen adınızı, telefonunuzu, tarihi ve saati eksiksiz seçin!");
