@@ -7,7 +7,7 @@ HTML, CSS ve JavaScript ile yapılmıştır. Veriler tarayıcıda saklanır.
 
 ## 🚀 Canlı Demo
 
-👉 [Siteyi Gör](https://senin-kullanici-adin.github.io/berber-randevu-sistemi)
+👉 [Siteyi Gör](https://mertkq-spec.github.io/arda-berber-/index.html)
 
 ---
 
