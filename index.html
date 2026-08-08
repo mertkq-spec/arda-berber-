@@ -4,24 +4,137 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Arda Yılmaz | Profesyonel Berber</title>
-    <link rel="stylesheet" href="css/style.css">
+    <style>
+        :root {
+            --bg: #0b0b0b;
+            --card: #161616;
+            --text: #f0f0f0;
+            --muted: #aaa;
+            --border: #222;
+            --header: #121212;
+            --accent: #d4af37;
+            --accent-hover: #f3c653;
+            --success: #2ecc71;
+            --danger: #e74c3c;
+        }
+
+        [data-theme="light"] {
+            --bg: #f4f4f4;
+            --card: #ffffff;
+            --text: #222222;
+            --muted: #666666;
+            --border: #dddddd;
+            --header: #ffffff;
+            --accent: #b89728;
+            --accent-hover: #d4af37;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; transition: background 0.3s, color 0.3s; }
+        html { scroll-behavior: smooth; }
+        body { background: var(--bg); color: var(--text); line-height: 1.6; overflow-x: hidden; }
+
+        header { background: var(--header); padding: 15px 40px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 1000; }
+        .logo { font-size: 22px; font-weight: bold; color: var(--accent); letter-spacing: 2px; }
+        
+        nav { display: flex; gap: 25px; align-items: center; }
+        nav a { color: var(--muted); text-decoration: none; transition: 0.3s; font-size: 15px; font-weight: 500; }
+        nav a:hover { color: var(--accent); }
+
+        .header-controls { display: flex; gap: 12px; align-items: center; }
+        .theme-btn, .lang-btn { background: none; border: 1px solid var(--border); color: var(--text); padding: 6px 14px; border-radius: 6px; cursor: pointer; font-size: 13px; transition: 0.3s; }
+        .theme-btn:hover, .lang-btn:hover { border-color: var(--accent); color: var(--accent); }
+        .menu-toggle { display: none; flex-direction: column; cursor: pointer; gap: 5px; }
+        .menu-toggle span { width: 25px; height: 3px; background: var(--accent); border-radius: 2px; }
+
+        .hero { min-height: 85vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.9)), #111; padding: 0 20px; }
+        .status-badge { display: inline-flex; align-items: center; gap: 8px; background: var(--card); border: 1px solid var(--border); padding: 8px 18px; border-radius: 30px; font-size: 13px; margin-bottom: 20px; }
+        .status-dot { width: 10px; height: 10px; border-radius: 50%; animation: pulse 2s infinite; }
+        .status-dot.open { background: var(--success); box-shadow: 0 0 10px var(--success); }
+        .status-dot.closed { background: var(--danger); }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+        
+        .hero h1 { font-size: 52px; margin-bottom: 12px; color: #fff; letter-spacing: 2px; }
+        .hero .slogan { font-size: 22px; color: var(--accent); margin-bottom: 15px; font-style: italic; }
+        .hero p { font-size: 17px; color: #aaa; margin-bottom: 30px; max-width: 500px; }
+        
+        .btn { background: var(--accent); color: #0b0b0b; padding: 14px 36px; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; text-decoration: none; transition: 0.3s; display: inline-block; font-size: 15px; }
+        .btn:hover { background: var(--accent-hover); transform: translateY(-3px); }
+
+        section { padding: 80px 40px; max-width: 1200px; margin: 0 auto; opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease-out, transform 0.7s ease-out; }
+        section.visible { opacity: 1; transform: translateY(0); }
+        h2 { text-align: center; font-size: 36px; margin-bottom: 50px; color: var(--accent); letter-spacing: 1px; }
+
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 25px; }
+        .card { background: var(--card); padding: 35px 25px; border-radius: 12px; border: 1px solid var(--border); text-align: center; transition: 0.4s; }
+        .card:hover { transform: translateY(-8px); border-color: var(--accent); }
+        .card h3 { margin-bottom: 12px; color: var(--text); font-size: 20px; }
+        .card p { color: var(--muted); font-size: 14px; }
+        .price { color: var(--accent); font-size: 26px; font-weight: bold; margin-top: 18px; }
+
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        .gallery-item { border-radius: 12px; border: 1px solid var(--border); height: 260px; background: var(--card); display: flex; flex-direction: column; justify-content: center; align-items: center; color: var(--muted); padding: 20px; text-align: center; }
+
+        .booking-box { background: var(--card); padding: 40px; border-radius: 12px; border: 1px solid var(--border); max-width: 700px; margin: 0 auto; }
+        .form-group { margin-bottom: 22px; }
+        .form-group label { display: block; margin-bottom: 8px; color: var(--muted); font-size: 14px; font-weight: 500; }
+        .form-group input, .form-group select { width: 100%; padding: 14px; background: var(--bg); border: 1px solid var(--border); color: var(--text); border-radius: 8px; outline: none; font-size: 15px; }
+        .hours-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin-top: 10px; }
+        .hour-btn { background: var(--bg); border: 1px solid var(--border); color: var(--text); padding: 12px; border-radius: 8px; cursor: pointer; text-align: center; font-size: 14px; transition: 0.3s; }
+        .hour-btn:hover { border-color: var(--accent); }
+        .hour-btn.selected { background: var(--accent); color: #0b0b0b; font-weight: bold; }
+        .form-error { color: var(--danger); font-size: 13px; margin-top: 5px; display: none; }
+        .form-error.show { display: block; }
+        .success-message { background: rgba(46,204,113,0.1); border: 1px solid var(--success); color: var(--success); padding: 15px; border-radius: 8px; margin-top: 15px; text-align: center; display: none; font-weight: 500; }
+        .success-message.show { display: block; }
+
+        .about-box { background: var(--card); padding: 40px; border-radius: 12px; border: 1px solid var(--border); text-align: center; max-width: 800px; margin: 0 auto; }
+        .about-box p { color: var(--muted); margin-bottom: 15px; font-size: 16px; }
+        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 20px; margin-top: 30px; }
+        .stat-item { text-align: center; padding: 20px; background: var(--bg); border-radius: 10px; border: 1px solid var(--border); }
+        .stat-item h3 { color: var(--accent); font-size: 32px; }
+
+        .contact-info { margin-bottom: 25px; text-align: center; }
+        .contact-info p { margin-bottom: 8px; color: var(--muted); font-size: 16px; }
+        .social-links { display: flex; justify-content: center; gap: 15px; margin-top: 25px; flex-wrap: wrap; }
+        .social-links a { color: var(--accent); text-decoration: none; border: 1px solid var(--accent); padding: 12px 22px; border-radius: 8px; font-size: 14px; transition: 0.3s; }
+        .social-links a:hover { background: var(--accent); color: #0b0b0b; }
+
+        .float-whatsapp { position: fixed; bottom: 25px; right: 25px; background: #25d366; color: #fff; width: 60px; height: 60px; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 28px; text-decoration: none; z-index: 999; }
+        .admin-link { position: fixed; bottom: 25px; left: 25px; background: var(--card); color: var(--accent); width: 50px; height: 50px; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 20px; border: 1px solid var(--border); text-decoration: none; z-index: 999; }
+
+        footer { text-align: center; padding: 30px; background: var(--header); border-top: 1px solid var(--border); color: var(--muted); font-size: 14px; }
+        footer span { color: var(--accent); font-weight: bold; }
+
+        @media (max-width: 768px) {
+            header { padding: 15px 20px; }
+            .menu-toggle { display: flex; }
+            nav { display: none; position: absolute; top: 65px; left: 0; width: 100%; background: var(--header); flex-direction: column; align-items: center; padding: 25px 0; border-bottom: 1px solid var(--border); }
+            nav.active { display: flex; }
+            nav a { margin: 12px 0; font-size: 17px; }
+            .hero h1 { font-size: 34px; }
+            section { padding: 50px 20px; }
+            h2 { font-size: 28px; }
+            .hours-grid { grid-template-columns: repeat(3, 1fr); }
+        }
+    </style>
 </head>
 <body>
 
 <header>
-    <div class="logo">✂️ ARDA YILMAZ</div>
+    <div class="logo">ARDA YILMAZ</div>
     <div class="header-controls">
-        <button class="theme-btn" onclick="temaDegistir()">🌙 Tema</button>
+        <button class="theme-btn" id="temaBtn" onclick="temaDegistir()">🌙</button>
+        <button class="lang-btn" id="dilBtn" onclick="dilDegistir()">EN</button>
         <div class="menu-toggle" onclick="menuAcKapat()">
             <span></span><span></span><span></span>
         </div>
     </div>
     <nav id="navMenu">
-        <a href="#hizmetler">Hizmetler</a>
-        <a href="#galeri">Galeri</a>
-        <a href="#randevu">Randevu Al</a>
-        <a href="#hakkinda">Hakkında</a>
-        <a href="#iletisim">İletişim</a>
+        <a href="#hizmetler" onclick="menuAcKapat()" data-tr="Hizmetler" data-en="Services">Hizmetler</a>
+        <a href="#galeri" onclick="menuAcKapat()" data-tr="Galeri" data-en="Gallery">Galeri</a>
+        <a href="#randevu" onclick="menuAcKapat()" data-tr="Randevu Al" data-en="Book Now">Randevu Al</a>
+        <a href="#hakkinda" onclick="menuAcKapat()" data-tr="Hakkında" data-en="About">Hakkında</a>
+        <a href="#iletisim" onclick="menuAcKapat()" data-tr="İletişim" data-en="Contact">İletişim</a>
     </nav>
 </header>
 
@@ -31,71 +144,60 @@
         <span id="durumText">Şu an Açık - Randevu Alabilirsiniz</span>
     </div>
     <h1>ARDA YILMAZ</h1>
-    <div class="slogan">"Tarzını Keskinleştir, Kendini Yenile!"</div>
-    <p>Bursa / Osmangazi • Profesyonel Saç Kesimi & Bakım</p>
-    <a href="#randevu" class="btn">Hemen Randevu Al</a>
+    <div class="slogan" id="heroSlogan">"Tarzını Keskinleştir, Kendini Yenile!"</div>
+    <p id="heroDesc">Bursa / Osmangazi • Profesyonel Saç Kesimi & Bakım</p>
+    <a href="#randevu" class="btn" id="heroBtn">Hemen Randevu Al</a>
 </div>
 
 <section id="hizmetler">
-    <h2>Hizmetler & Fiyatlar</h2>
+    <h2 id="baslikHizmet">Hizmetler & Fiyatlar</h2>
     <div class="services-grid">
         <div class="card">
-            <div class="card-icon">💇</div>
-            <h3>Saç Kesimi</h3>
-            <p>Modern ve yüz tipine uygun fade/crop kesim stilleri.</p>
-            <div class="price">300 <span>TL</span></div>
+            <h3 id="h1Title">Saç Kesimi</h3>
+            <p id="h1Desc">Modern ve yüz tipine uygun fade/crop kesim stilleri.</p>
+            <div class="price">300 TL</div>
         </div>
         <div class="card">
-            <div class="card-icon">🧔</div>
-            <h3>Sakal Şekillendirme</h3>
-            <p>Özenli hat çizgileri ve profesyonel bakım.</p>
-            <div class="price">100 <span>TL</span></div>
+            <h3 id="h2Title">Sakal Şekillendirme</h3>
+            <p id="h2Desc">Özenli hat çizgileri ve profesyonel bakım.</p>
+            <div class="price">100 TL</div>
         </div>
         <div class="card">
-            <div class="card-icon">✨</div>
-            <h3>Saç & Sakal Bakımı</h3>
-            <p>Komple bakım paketi ile kusursuz görünüm.</p>
-            <div class="price">400 <span>TL</span></div>
+            <h3 id="h3Title">Saç & Sakal Bakımı</h3>
+            <p id="h3Desc">Komple bakım paketi ile kusursuz görünüm.</p>
+            <div class="price">400 TL</div>
         </div>
         <div class="card">
-            <div class="card-icon">💨</div>
-            <h3>Fön & Stil Düzenleme</h3>
-            <p>Günlük tarza uygun form ve şekillendirme.</p>
-            <div class="price">100 <span>TL</span></div>
+            <h3 id="h4Title">Fön & Stil Düzenleme</h3>
+            <p id="h4Desc">Günlük tarza uygun form ve şekillendirme.</p>
+            <div class="price">100 TL</div>
         </div>
     </div>
 </section>
 
 <section id="galeri">
-    <h2>Çalışmalarımız</h2>
+    <h2 id="baslikGaleri">Çalışmalarımız</h2>
     <div class="gallery-grid">
-        <div class="gallery-item">
-            <p>📸 Yeni Tıraş Fotoğrafları Çok Yakında...</p>
-        </div>
-        <div class="gallery-item">
-            <p>📸 Yeni Tıraş Fotoğrafları Çok Yakında...</p>
-        </div>
-        <div class="gallery-item">
-            <p>📸 Yeni Tıraş Fotoğrafları Çok Yakında...</p>
-        </div>
+        <div class="gallery-item"><p id="galeriText">Yeni Tıraş Fotoğrafları Çok Yakında Eklenecektir...</p></div>
+        <div class="gallery-item"><p id="galeriText2">Yeni Tıraş Fotoğrafları Çok Yakında Eklenecektir...</p></div>
     </div>
 </section>
 
 <section id="randevu">
-    <h2>Randevu Oluştur</h2>
+    <h2 id="baslikRandevu">Randevu Oluştur</h2>
     <div class="booking-box">
         <div class="form-group">
-            <label>Adınız Soyadınız *</label>
+            <label id="labelAd">Adınız Soyadınız *</label>
             <input type="text" id="musteriAdi" placeholder="Adınızı girin">
             <div class="form-error" id="hataAd">Lütfen adınızı girin</div>
         </div>
         <div class="form-group">
-            <label>Telefon Numaranız *</label>
+            <label id="labelTel">Telefon Numaranız *</label>
             <input type="tel" id="musteriTel" placeholder="05XX XXX XX XX">
             <div class="form-error" id="hataTel">Geçerli bir telefon girin</div>
         </div>
         <div class="form-group">
-            <label>Hizmet Seçin *</label>
+            <label id="labelHizmet">Hizmet Seçin *</label>
             <select id="hizmetSecim">
                 <option value="Saç Kesimi - 300 TL">Saç Kesimi - 300 TL</option>
                 <option value="Sakal Şekillendirme - 100 TL">Sakal Şekillendirme - 100 TL</option>
@@ -104,12 +206,12 @@
             </select>
         </div>
         <div class="form-group">
-            <label>Gün Seçin *</label>
+            <label id="labelTarih">Gün Seçin *</label>
             <input type="date" id="randevuTarihi">
             <div class="form-error" id="hataTarih">Lütfen tarih seçin</div>
         </div>
         <div class="form-group">
-            <label>Saat Seçin (12:00 - 21:00)</label>
+            <label id="labelSaat">Saat Seçin (12:00 - 21:00)</label>
             <div class="hours-grid">
                 <button type="button" class="hour-btn" onclick="saatSec(this)">12:00</button>
                 <button type="button" class="hour-btn" onclick="saatSec(this)">13:00</button>
@@ -124,39 +226,26 @@
             </div>
             <div class="form-error" id="hataSaat">Lütfen saat seçin</div>
         </div>
-        <div class="success-message" id="basariMesaj">
-            ✅ Randevunuz başarıyla kaydedildi! Size en kısa sürede dönüş yapılacak.
-        </div>
-        <button type="button" class="btn" style="width:100%;margin-top:15px" onclick="randevuKaydet()">
-            Randevu Oluştur
-        </button>
+        <div class="success-message" id="basariMesaj">✅ Randevunuz başarıyla kaydedildi!</div>
+        <button type="button" class="btn" style="width:100%;margin-top:15px" onclick="randevuKaydet()" id="btnRandevu">Randevu Oluştur</button>
     </div>
 </section>
 
 <section id="hakkinda">
-    <h2>Kurucu & Hakkında</h2>
+    <h2 id="baslikHakkinda">Kurucu & Hakkında</h2>
     <div class="about-box">
-        <p><strong>Arda Yılmaz</strong> tarafından Bursa / Osmangazi bölgesinde kurulan profesyonel bakım noktası.</p>
-        <p>Bu modern web sitesinin geliştirilmesi <strong>Mert</strong> tarafından yapılmıştır.</p>
+        <p id="hakkindaText1"><strong>Arda Yılmaz</strong> tarafından Bursa / Osmangazi bölgesinde kurulan profesyonel bakım noktası.</p>
+        <p id="hakkindaText2">Bu modern web sitesinin geliştirilmesi <strong>Mert</strong> tarafından yapılmıştır.</p>
         <div class="stats-grid">
-            <div class="stat-item">
-                <h3>500+</h3>
-                <p>Mutlu Müşteri</p>
-            </div>
-            <div class="stat-item">
-                <h3>4</h3>
-                <p>Yıllık Deneyim</p>
-            </div>
-            <div class="stat-item">
-                <h3>100%</h3>
-                <p>Memnuniyet</p>
-            </div>
+            <div class="stat-item"><h3>500+</h3><p id="stat1">Mutlu Müşteri</p></div>
+            <div class="stat-item"><h3>4</h3><p id="stat2">Yıllık Deneyim</p></div>
+            <div class="stat-item"><h3>100%</h3><p id="stat3">Memnuniyet</p></div>
         </div>
     </div>
 </section>
 
 <section id="iletisim" style="text-align:center;">
-    <h2>İletişim & Sosyal Medya</h2>
+    <h2 id="baslikIletisim">İletişim & Sosyal Medya</h2>
     <div class="contact-info">
         <p>📍 Bursa, Osmangazi</p>
         <p>📞 0501 296 3140</p>
@@ -174,6 +263,250 @@
     <p>&copy; 2026 Arda Yılmaz. Tüm hakları saklıdır. | Geliştirici: <span>Mert</span></p>
 </footer>
 
-<script src="js/main.js"></script>
+<script>
+let secilenSaat = "";
+let aktifDil = localStorage.getItem('dil') || 'tr';
+
+const ceviriler = {
+    tr: {
+        durumAcik: "Şu an Açık - Randevu Alabilirsiniz",
+        durumKapali: "Şu an Kapalı - Yarın İçin Randevu Bırakabilirsiniz",
+        slogan: '"Tarzını Keskinleştir, Kendini Yenile!"',
+        heroDesc: "Bursa / Osmangazi • Profesyonel Saç Kesimi & Bakım",
+        heroBtn: "Hemen Randevu Al",
+        baslikHizmet: "Hizmetler & Fiyatlar",
+        h1Title: "Saç Kesimi",
+        h1Desc: "Modern ve yüz tipine uygun fade/crop kesim stilleri.",
+        h2Title: "Sakal Şekillendirme",
+        h2Desc: "Özenli hat çizgileri ve profesyonel bakım.",
+        h3Title: "Saç & Sakal Bakımı",
+        h3Desc: "Komple bakım paketi ile kusursuz görünüm.",
+        h4Title: "Fön & Stil Düzenleme",
+        h4Desc: "Günlük tarza uygun form ve şekillendirme.",
+        baslikGaleri: "Çalışmalarımız",
+        galeriText: "Yeni Tıraş Fotoğrafları Çok Yakında Eklenecektir...",
+        baslikRandevu: "Randevu Oluştur",
+        labelAd: "Adınız Soyadınız *",
+        labelTel: "Telefon Numaranız *",
+        labelHizmet: "Hizmet Seçin *",
+        labelTarih: "Gün Seçin *",
+        labelSaat: "Saat Seçin (12:00 - 21:00)",
+        btnRandevu: "Randevu Oluştur",
+        baslikHakkinda: "Kurucu & Hakkında",
+        hakkindaText1: "<strong>Arda Yılmaz</strong> tarafından Bursa / Osmangazi bölgesinde kurulan profesyonel bakım noktası.",
+        hakkindaText2: "Bu modern web sitesinin geliştirilmesi <strong>Mert</strong> tarafından yapılmıştır.",
+        stat1: "Mutlu Müşteri",
+        stat2: "Yıllık Deneyim",
+        stat3: "Memnuniyet",
+        baslikIletisim: "İletişim & Sosyal Medya",
+        navHizmetler: "Hizmetler",
+        navGaleri: "Galeri",
+        navRandevu: "Randevu Al",
+        navHakkinda: "Hakkında",
+        navIletisim: "İletişim"
+    },
+    en: {
+        durumAcik: "Currently Open - You Can Book Now",
+        durumKapali: "Currently Closed - Leave an Appointment for Tomorrow",
+        slogan: '"Sharpen Your Style, Renew Yourself!"',
+        heroDesc: "Bursa / Osmangazi • Professional Haircut & Care",
+        heroBtn: "Book Now",
+        baslikHizmet: "Services & Prices",
+        h1Title: "Haircut",
+        h1Desc: "Modern fade/crop styles suitable for your face type.",
+        h2Title: "Beard Shaping",
+        h2Desc: "Precise line work and professional care.",
+        h3Title: "Hair & Beard Care",
+        h3Desc: "Complete care package for a flawless look.",
+        h4Title: "Blow Dry & Styling",
+        h4Desc: "Daily style-appropriate form and shaping.",
+        baslikGaleri: "Our Work",
+        galeriText: "New Haircut Photos Coming Soon...",
+        baslikRandevu: "Book Appointment",
+        labelAd: "Full Name *",
+        labelTel: "Phone Number *",
+        labelHizmet: "Select Service *",
+        labelTarih: "Select Date *",
+        labelSaat: "Select Time (12:00 - 21:00)",
+        btnRandevu: "Create Appointment",
+        baslikHakkinda: "Founder & About",
+        hakkindaText1: "A professional grooming spot established by <strong>Arda Yılmaz</strong> in Bursa / Osmangazi.",
+        hakkindaText2: "This modern website was developed by <strong>Mert</strong>.",
+        stat1: "Happy Customers",
+        stat2: "Years Experience",
+        stat3: "Satisfaction",
+        baslikIletisim: "Contact & Social Media",
+        navHizmetler: "Services",
+        navGaleri: "Gallery",
+        navRandevu: "Book Now",
+        navHakkinda: "About",
+        navIletisim: "Contact"
+    }
+};
+
+function menuAcKapat() {
+    document.getElementById('navMenu').classList.toggle('active');
+}
+
+function temaDegistir() {
+    const html = document.documentElement;
+    const btn = document.getElementById('temaBtn');
+    if (html.getAttribute('data-theme') === 'light') {
+        html.removeAttribute('data-theme');
+        localStorage.setItem('tema', 'dark');
+        btn.innerText = '🌙';
+    } else {
+        html.setAttribute('data-theme', 'light');
+        localStorage.setItem('tema', 'light');
+        btn.innerText = '☀️';
+    }
+}
+
+function dilDegistir() {
+    aktifDil = aktifDil === 'tr' ? 'en' : 'tr';
+    localStorage.setItem('dil', aktifDil);
+    document.getElementById('dilBtn').innerText = aktifDil === 'tr' ? 'EN' : 'TR';
+    dilUygula();
+    durumKontrol();
+}
+
+function dilUygula() {
+    const c = ceviriler[aktifDil];
+    document.getElementById('heroSlogan').innerText = c.slogan;
+    document.getElementById('heroDesc').innerText = c.heroDesc;
+    document.getElementById('heroBtn').innerText = c.heroBtn;
+    document.getElementById('baslikHizmet').innerText = c.baslikHizmet;
+    document.getElementById('h1Title').innerText = c.h1Title;
+    document.getElementById('h1Desc').innerText = c.h1Desc;
+    document.getElementById('h2Title').innerText = c.h2Title;
+    document.getElementById('h2Desc').innerText = c.h2Desc;
+    document.getElementById('h3Title').innerText = c.h3Title;
+    document.getElementById('h3Desc').innerText = c.h3Desc;
+    document.getElementById('h4Title').innerText = c.h4Title;
+    document.getElementById('h4Desc').innerText = c.h4Desc;
+    document.getElementById('baslikGaleri').innerText = c.baslikGaleri;
+    document.getElementById('galeriText').innerText = c.galeriText;
+    document.getElementById('galeriText2').innerText = c.galeriText;
+    document.getElementById('baslikRandevu').innerText = c.baslikRandevu;
+    document.getElementById('labelAd').innerText = c.labelAd;
+    document.getElementById('labelTel').innerText = c.labelTel;
+    document.getElementById('labelHizmet').innerText = c.labelHizmet;
+    document.getElementById('labelTarih').innerText = c.labelTarih;
+    document.getElementById('labelSaat').innerText = c.labelSaat;
+    document.getElementById('btnRandevu').innerText = c.btnRandevu;
+    document.getElementById('baslikHakkinda').innerText = c.baslikHakkinda;
+    document.getElementById('hakkindaText1').innerHTML = c.hakkindaText1;
+    document.getElementById('hakkindaText2').innerHTML = c.hakkindaText2;
+    document.getElementById('stat1').innerText = c.stat1;
+    document.getElementById('stat2').innerText = c.stat2;
+    document.getElementById('stat3').innerText = c.stat3;
+    document.getElementById('baslikIletisim').innerText = c.baslikIletisim;
+    
+    const navLinks = document.querySelectorAll('nav a');
+    navLinks[0].innerText = c.navHizmetler;
+    navLinks[1].innerText = c.navGaleri;
+    navLinks[2].innerText = c.navRandevu;
+    navLinks[3].innerText = c.navHakkinda;
+    navLinks[4].innerText = c.navIletisim;
+}
+
+function durumKontrol() {
+    const simdi = new Date();
+    const saat = simdi.getHours();
+    const dot = document.getElementById('durumDot');
+    const text = document.getElementById('durumText');
+    const c = ceviriler[aktifDil];
+
+    if (saat >= 12 && saat < 21) {
+        dot.className = "status-dot open";
+        text.innerText = c.durumAcik;
+    } else {
+        dot.className = "status-dot closed";
+        text.innerText = c.durumKapali;
+    }
+}
+
+function saatSec(element) {
+    document.querySelectorAll('.hour-btn').forEach(btn => btn.classList.remove('selected'));
+    element.classList.add('selected');
+    secilenSaat = element.innerText;
+    document.getElementById('hataSaat').classList.remove('show');
+}
+
+function formuKontrolEt() {
+    let hatasiz = true;
+    const ad = document.getElementById('musteriAdi').value.trim();
+    const tel = document.getElementById('musteriTel').value.trim();
+    const tarih = document.getElementById('randevuTarihi').value;
+    
+    if (ad.length < 2) { document.getElementById('hataAd').classList.add('show'); hatasiz = false; }
+    else { document.getElementById('hataAd').classList.remove('show'); }
+    
+    const telTemiz = tel.replace(/\s/g, '').replace(/^0/, '');
+    if (telTemiz.length < 10) { document.getElementById('hataTel').classList.add('show'); hatasiz = false; }
+    else { document.getElementById('hataTel').classList.remove('show'); }
+    
+    if (!tarih) { document.getElementById('hataTarih').classList.add('show'); hatasiz = false; }
+    else { document.getElementById('hataTarih').classList.remove('show'); }
+    
+    if (!secilenSaat) { document.getElementById('hataSaat').classList.add('show'); hatasiz = false; }
+    else { document.getElementById('hataSaat').classList.remove('show'); }
+    
+    return hatasiz;
+}
+
+function randevuKaydet() {
+    if (!formuKontrolEt()) return;
+    
+    const yeniRandevu = {
+        id: Date.now(),
+        ad: document.getElementById('musteriAdi').value.trim(),
+        tel: document.getElementById('musteriTel').value.trim(),
+        hizmet: document.getElementById('hizmetSecim').value,
+        tarih: document.getElementById('randevuTarihi').value,
+        saat: secilenSaat,
+        durum: "Bekliyor",
+        olusturmaTarihi: new Date().toISOString()
+    };
+    
+    let randevular = JSON.parse(localStorage.getItem('randevular')) || [];
+    randevular.push(yeniRandevu);
+    localStorage.setItem('randevular', JSON.stringify(randevular));
+    
+    document.getElementById('basariMesaj').classList.add('show');
+    document.getElementById('musteriAdi').value = '';
+    document.getElementById('musteriTel').value = '';
+    document.getElementById('randevuTarihi').value = '';
+    document.querySelectorAll('.hour-btn').forEach(btn => btn.classList.remove('selected'));
+    secilenSaat = '';
+    
+    setTimeout(() => { document.getElementById('basariMesaj').classList.remove('show'); }, 3000);
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Tema yükle
+    const kayitliTema = localStorage.getItem('tema');
+    if (kayitliTema === 'light') {
+        document.documentElement.setAttribute('data-theme', 'light');
+        document.getElementById('temaBtn').innerText = '☀️';
+    }
+    
+    // Dil yükle
+    document.getElementById('dilBtn').innerText = aktifDil === 'tr' ? 'EN' : 'TR';
+    if (aktifDil === 'en') dilUygula();
+    
+    durumKontrol();
+    
+    const bugun = new Date().toISOString().split('T')[0];
+    document.getElementById('randevuTarihi').setAttribute('min', bugun);
+    
+    const gozlemci = new IntersectionObserver((entries) => {
+        entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    
+    document.querySelectorAll('section').forEach(section => gozlemci.observe(section));
+});
+</script>
+
 </body>
 </html>
