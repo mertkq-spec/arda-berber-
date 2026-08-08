@@ -1,59 +1,80 @@
-
-## 🚀 Canlı Demo
-[https://senin-kullanici-adi.github.io/berber-randevu-sistemi](https://...)
 # 💈 Berber Randevu Yönetim Sistemi
 
-> Basit ama profesyonel bir berber randevu sistemi. 
-> HTML, CSS ve JavaScript ile yapılmıştır. Veriler tarayıcıda saklanır.
+Basit ama profesyonel bir berber randevu sistemi.  
+HTML, CSS ve JavaScript ile yapılmıştır. Veriler tarayıcıda saklanır.
 
-## 🚀 Özellikler
+---
 
-### Ana Site (index.html)
+## 🚀 Canlı Demo
+
+👉 [Siteyi Gör](https://senin-kullanici-adin.github.io/berber-randevu-sistemi)
+
+---
+
+## 📸 Ekran Görüntüleri
+
+*Yakında eklenecek...*
+
+---
+
+## ⚡ Özellikler
+
+### Ana Site (`index.html`)
 - ✅ Online randevu alma
-- ✅ Otomatik form kontrolü
+- ✅ Otomatik form doğrulama (ad, telefon, tarih, saat kontrolü)
 - ✅ Çalışma saati göstergesi (açık/kapalı)
+- ✅ Koyu / Açık tema değiştirme
 - ✅ Mobil uyumlu tasarım
-- ✅ Koyu/Açık tema
+- ✅ Scroll animasyonları
 
-### Admin Paneli (admin.html)
-- ✅ Şifreli giriş (admin / admin123)
+### Admin Paneli (`admin.html`)
+- ✅ Şifreli giriş sistemi
 - ✅ Tüm randevuları listeleme
 - ✅ Durum takibi (Bekliyor / Onaylandı / Tamamlandı / İptal)
 - ✅ Randevu silme
-- ✅ İstatistikler (toplam randevu, gelir, vb.)
-- ✅ Arama ve filtreleme
+- ✅ İstatistikler (toplam randevu, bugünkü randevular, gelir)
+- ✅ İsim ve telefon ile arama
+- ✅ Durum bazlı filtreleme
+
+---
 
 ## 📂 Dosyalar
 
 | Dosya | Açıklama |
 |-------|----------|
-| `index.html` | Ana web sitesi |
-| `admin.html` | Yönetim paneli |
-| `css/style.css` | Tasarım dosyası |
-| `js/main.js` | Ana site kodları |
-| `js/admin.js` | Admin paneli kodları |
+| `index.html` | Ana web sitesi (müşteriler buradan randevu alır) |
+| `admin.html` | Yönetim paneli (berber buradan yönetir) |
+
+---
 
 ## 🛠 Kullanılan Teknolojiler
 
 - HTML5
 - CSS3
-- JavaScript (tarayıcıda çalışan)
+- JavaScript (Vanilla)
 - localStorage (veri saklama)
+
+---
 
 ## 🚀 Nasıl Kullanılır?
 
-1. Dosyaları bilgisayarına indir
-2. `index.html` dosyasını tarayıcıda aç
-3. Randevu almayı dene
-4. `admin.html` dosyasını aç
-5. Kullanıcı adı: `admin`, Şifre: `admin123` ile giriş yap
-6. Randevuları görüntüle ve yönet
+1. `index.html` dosyasını tarayıcıda aç
+2. Randevu formunu doldur ve gönder
+3. `admin.html` dosyasını aç
+4. Giriş yap:
+   - **Kullanıcı adı:** `admin`
+   - **Şifre:** `Arda2026!`
+5. Randevuları görüntüle, durumunu değiştir veya sil
+
+---
 
 ## 📝 Not
 
-Bu proje tamamen tarayıcıda çalışır. 
-Veriler bilgisayarın hafızasına (localStorage) kaydedilir.
-Tarayıcı geçmişi silinirse veriler de silinir.
+Bu proje tamamen tarayıcıda çalışır.  
+Veriler bilgisayarın hafızasına (`localStorage`) kaydedilir.  
+Tarayıcı geçmişi veya çerezler silinirse veriler de silinir.
+
+---
 
 ## 👨‍💻 Geliştirici
 
