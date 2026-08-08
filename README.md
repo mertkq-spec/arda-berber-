@@ -1,8 +1,3 @@
-## 🚀 Canlı Demo
-👉 [Siteyi Gör](https://mertkq-spec.github.io/arda-berber-/)
-# 💈 Berber Randevu Yönetim Sistemi
-
-&gt; Full-stack randevu yönetim sistemi. React frontend + FastAPI backend + PostgreSQL.
 
 ## 🚀 Canlı Demo
 [https://senin-kullanici-adi.github.io/berber-randevu-sistemi](https://...)
